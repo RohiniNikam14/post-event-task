@@ -1,8 +1,5 @@
 import User from '../model/user.model.js';
 import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 export const protectRoute = async (req, res, next) => {
   try {
@@ -23,4 +20,11 @@ export const protectRoute = async (req, res, next) => {
     console.error('Auth error:', error);
     res.status(500).json({ message: 'Internal server error' });
   }
+};
+
+export const isTeacher = (req, res, next) => {
+  if (req.user?.role !== 'teacher') {
+    return res.status(401).json({ message: 'Access denied' });
+  }
+  next();
 };
