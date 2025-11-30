@@ -16,7 +16,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/files', fileRoutes);
 
 app.get("/",(req,res) => {
-res.send('API is running... ');
+res.send('Studygeni running perfectly... ');
 });
 
 app.listen(PORT, () => {
