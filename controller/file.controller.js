@@ -41,7 +41,7 @@ export const addFile = async (req, res) => {
 
     return res.status(201).json({
       success: true,
-      message: 'File uploaded & record created successfully',
+      message: 'File uploaded & record created successfully...',
       data: newFile,
     });
   } catch (error) {
